@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Graph</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Recovery Graph</h2>
+        <canvas id="recoveryChart"></canvas>
+    </div>
+
+    <script>
+        // Data for last 3 checkups
+        var data = {
+            labels: ["Checkup 1", "Checkup 2", "Checkup 3"],
+            datasets: [
+                {
+                    label: "Mild",
+                    backgroundColor: "rgba(255, 99, 132, 0.2)",
+                    borderColor: "rgba(255, 99, 132, 1)",
+                    borderWidth: 1,
+                    data: [90, 85, 80]
+                },
+                {
+                    label: "Moderate",
+                    backgroundColor: "rgba(54, 162, 235, 0.2)",
+                    borderColor: "rgba(54, 162, 235, 1)",
+                    borderWidth: 1,
+                    data: [85, 80, 75]
+                },
+                {
+                    label: "Severe",
+                    backgroundColor: "rgba(255, 206, 86, 0.2)",
+                    borderColor: "rgba(255, 206, 86, 1)",
+                    borderWidth: 1,
+                    data: [80, 75, 70]
+                },
+                {
+                    label: "Proliferative",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                    data: [75, 70, 65]
+                }
+            ]
+        };
+
+        // Configuration options
+        var options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Get the canvas element
+        var ctx = document.getElementById('recoveryChart').getContext('2d');
+
+        // Create the chart
+        var recoveryChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>

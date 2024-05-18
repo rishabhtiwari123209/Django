@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Prediction Results</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .section {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h2, h3 {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        p {
+            font-family: 'Arial', sans-serif;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="section">
+                    <h2>Model 1 Results</h2>
+                    <p>Mild Diabetic Retinopathy Accuracy: <span id="mild-accuracy-model1">90%</span></p>
+                    <p>Moderate Diabetic Retinopathy Accuracy: <span id="moderate-accuracy-model1">85%</span></p>
+                    <p>Severe Diabetic Retinopathy Accuracy: <span id="severe-accuracy-model1">80%</span></p>
+                    <p>Proliferative Diabetic Retinopathy Accuracy: <span id="proliferative-accuracy-model1">75%</span></p>
+                    <h3>Final Result for Model 1: <span id="final-result-model1">Mild</span></h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="section">
+                    <h2>Model 2 Results</h2>
+                    <p>Mild Diabetic Retinopathy Accuracy: <span id="mild-accuracy-model2">85%</span></p>
+                    <p>Moderate Diabetic Retinopathy Accuracy: <span id="moderate-accuracy-model2">80%</span></p>
+                    <p>Severe Diabetic Retinopathy Accuracy: <span id="severe-accuracy-model2">75%</span></p>
+                    <p>Proliferative Diabetic Retinopathy Accuracy: <span id="proliferative-accuracy-model2">70%</span></p>
+                    <h3>Final Result for Model 2: <span id="final-result-model2">Moderate</span></h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="section">
+                    <h2>Model 3 Results</h2>
+                    <p>Mild Diabetic Retinopathy Accuracy: <span id="mild-accuracy-model3">80%</span></p>
+                    <p>Moderate Diabetic Retinopathy Accuracy: <span id="moderate-accuracy-model3">75%</span></p>
+                    <p>Severe Diabetic Retinopathy Accuracy: <span id="severe-accuracy-model3">70%</span></p>
+                    <p>Proliferative Diabetic Retinopathy Accuracy: <span id="proliferative-accuracy-model3">65%</span></p>
+                    <h3>Final Result for Model 3: <span id="final-result-model3">Severe</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

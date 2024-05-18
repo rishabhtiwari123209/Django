@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Patient Registration Form</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputDOB">Date of Birth</label>
+                    <input type="date" class="form-control" id="inputDOB" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputGender">Gender</label>
+                    <select id="inputGender" class="form-control" required>
+                        <option selected disabled>Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="tel" class="form-control" id="inputPhone" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputBloodPressure">Current Blood Pressure</label>
+                    <input type="text" class="form-control" id="inputBloodPressure" placeholder="Blood Pressure" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputDiabeticLevel">Diabetic Level</label>
+                    <input type="text" class="form-control" id="inputDiabeticLevel" placeholder="Diabetic Level" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputDescription">Description of the Problem</label>
+                    <textarea class="form-control" id="inputDescription" rows="3" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

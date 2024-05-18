@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Image Upload</h1>
+        <form id="image-upload-form" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="file" id="image-input" name="image" accept="image/*" onchange="previewImage(event)">
+            <img id="image-preview" src="#" alt="Selected Image" style="display: none; max-width: 300px; max-height: 300px;">
+            <button type="submit" class="btn btn-primary">Upload & Preview</button>
+        </form>
+        {% if image_path %}
+            <h2>Image Metadata:</h2>
+            <ul>
+                <li>Image Name: {{ metadata.image_name }}</li>
+                <li>Upload Time: {{ metadata.upload_time }}</li>
+                <li>Image Size: {{ metadata.image_size }}</li>
+                <li>Image Dimensions: {{ metadata.image_dimensions }}</li>
+                <!-- Add more metadata here -->
+            </ul>
+        {% endif %}
+    </div>
+    <!-- Bootstrap JS -->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+
+    <!-- jQuery Slim (necessary for Cropper.js) -->
+   
+
+
+    <div class="container mt-5">
+        <h1>Image Upload & Crop</h1>
+        <form id="image-upload-form" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="file" id="image-input" name="image" accept="image/*" onchange="previewImage(event)">
+            <img id="image-preview" src="#" alt="Selected Image" style="display: none; max-width: 300px; max-height: 300px;">
+            {% comment %} <button type="submit" class="btn btn-primary">Upload & Crop</button> {% endcomment %}
+        </form>
+        <div id="cropper-container" style="display: none;">
+            <h2>Crop Image</h2>
+            <div>
+                <img id="cropper-image" src="#" alt="Croppable Image" style="max-width: 100%;">
+            </div>
+            <button id="crop-button" class="btn btn-success">Crop Image</button>
+        </div>
+    </div>
+<!-- Cropper.js JS -->
+<script>
+    function previewImage(event) {
+        var imagePreview = document.getElementById('image-preview');
+        imagePreview.style.display = 'block';
+        imagePreview.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    $(document).ready(function() {
+        $('#image-preview').cropper({
+            aspectRatio: 1 / 1,
+            crop: function(e) {
+                // Output the cropping data
+                console.log(e.detail.x);
+                console.log(e.detail.y);
+                console.log(e.detail.width);
+                console.log(e.detail.height);
+                console.log(e.detail.rotate);
+                console.log(e.detail.scaleX);
+                console.log(e.detail.scaleY);
+            }
+        });
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<script>
+    document.getElementById('crop-button').addEventListener('click', function() {
+        // Get cropped canvas
+        var croppedCanvas = cropper.getCroppedCanvas();
+        
+        // Convert canvas to base64 data URL
+        var croppedImageDataURL = croppedCanvas.toDataURL(); // Error likely occurs here
+        
+        // You can now send this data to your server for further processing
+        console.log(croppedImageDataURL);
+    });
+    document.getElementById('crop-button').addEventListener('click', function() {
+        // Get cropped canvas
+        var croppedCanvas = cropper.getCroppedCanvas();
+        
+        if (croppedCanvas) {
+            // Convert canvas to base64 data URL
+            var croppedImageDataURL = croppedCanvas.toDataURL();
+            
+            // You can now send this data to your server for further processing
+            console.log(croppedImageDataURL);
+        } else {
+            console.error("Failed to crop image. Cropped canvas is null.");
+        }
+    });
+        
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+<!-- Cropper.js JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Cropper.js JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

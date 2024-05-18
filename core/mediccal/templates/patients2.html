@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Patient Information Form</h2>
+        <form>
+            <div class="form-group">
+                <h4>Medical History:</h4>
+                <label for="existingConditions">Existing Medical Conditions</label>
+                <input type="text" class="form-control" id="existingConditions" placeholder="Existing Medical Conditions">
+
+                <label for="allergies">Allergies</label>
+                <input type="text" class="form-control" id="allergies" placeholder="Allergies">
+
+                <label for="currentMedications">Current Medications</label>
+                <input type="text" class="form-control" id="currentMedications" placeholder="Current Medications">
+
+                <label for="familyHistory">Family Medical History</label>
+                <input type="text" class="form-control" id="familyHistory" placeholder="Family Medical History">
+            </div>
+            <div class="form-group">
+                <h4>Symptoms/Chief Complaint:</h4>
+                <label for="symptomsDescription">Description of Symptoms</label>
+                <input type="text" class="form-control" id="symptomsDescription" placeholder="Description of Symptoms">
+
+                <label for="symptomsDuration">Duration of Symptoms</label>
+                <input type="text" class="form-control" id="symptomsDuration" placeholder="Duration of Symptoms">
+
+                <label for="aggravatingFactors">Any Triggers or Aggravating Factors</label>
+                <input type="text" class="form-control" id="aggravatingFactors" placeholder="Any Triggers or Aggravating Factors">
+            </div>
+            <div class="form-group">
+                <h4>Diagnostic Tests:</h4>
+                <label for="previousTests">Previous Diagnostic Tests (if applicable)</label>
+                <input type="text" class="form-control" id="previousTests" placeholder="Previous Diagnostic Tests">
+
+                <label for="testResults">Results of Diagnostic Tests (if available)</label>
+                <input type="text" class="form-control" id="testResults" placeholder="Results of Diagnostic Tests">
+            </div>
+            <div class="form-group">
+                <h4>Telemedicine Consent:</h4>
+                <label for="telemedicineConsent">Consent for Telemedicine Consultation</label>
+                <input type="text" class="form-control" id="telemedicineConsent" placeholder="Consent for Telemedicine Consultation" readonly>
+
+                <label for="telemedicineUnderstanding">Understanding of Risks and Limitations of Telemedicine</label>
+                <input type="text" class="form-control" id="telemedicineUnderstanding" placeholder="Understanding of Risks and Limitations of Telemedicine" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- Medical History:
+
+Existing Medical Conditions
+Allergies
+Current Medications
+Family Medical History
+Symptoms/Chief Complaint:
+
+Description of Symptoms
+Duration of Symptoms
+Any Triggers or Aggravating Factors
+Diagnostic Tests:
+
+Previous Diagnostic Tests (if applicable)
+Results of Diagnostic Tests (if available)
+Telemedicine Consent (if offering telemedicine services):
+
+Consent for Telemedicine Consultation
+Understanding of Risks and Limitations of Telemedicine
+
+
+
+First Name
+Last Name
+Date of Birth
+Gender
+Email
+Phone Number
+Address
+Current Blood Pressure
+Diabetic Level
+Description of the Problem
+
+
+
+
+
+
+
+
+Patient Information Table:
+
+PatientID (Primary Key)
+FirstName
+LastName
+DateOfBirth
+Gender
+Email
+PhoneNumber
+Address
+BloodPressure
+DiabeticLevel
+ProblemDescription
+CurrentStage (e.g., Healthy, Mild, Moderate, Severe, Proliferative)
+
+Medical History Table:
+PatientID (Foreign Key referencing Patient Information Table)
+ExistingMedicalConditions
+Allergies
+CurrentMedications
+FamilyMedicalHistory
+
+
+Progress Tracking Table:
+ProgressID (Primary Key)
+PatientID (Foreign Key referencing Patient Information Table)
+Stage (e.g., Healthy, Mild, Moderate, Severe, Proliferative)
+DateOfAssessment
+RecoveryRate
+ProgressDescription
+
+
+
+
+
+
+
+
+-->
